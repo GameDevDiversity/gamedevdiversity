@@ -1,0 +1,72 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+.menu {
+	width: 840px;
+	background-color: #ACD1E9;
+	margin: 0 auto;
+}
+
+.menu.fixed {
+	width: 100%;
+	line-height: 40px;
+	position: fixed;
+	z-index: 999;
+	margin: 0em;
+}
+
+.menuright {
+	float: right;
+}
+
+.column {
+	width: 840px;
+	margin: 0 auto;
+}
+
+.header {
+	padding-top: 50px;
+	text-align: center;
+}
+
+.title {
+	font-size: 30px;
+}
+
+.table {
+	box-sizing: border-box;
+	width: 100%;
+	color: rgba(0,0,0,0.8);
+	border-collapse: collapse;
+	margin: 1em 0em;
+	padding: 1em;
+	border-radius: 5px 5px 5px 5px;
+}
+
+th {
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 5px 0px 0px 0px;
+	background-color: #F5FAFA;
+}
+
+td {
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 5px 0px 0px 0px;
+}
+
+td.good {
+	background-color: #C1DAD6;
+}
+
+td.good:hover {
+	background-color: #E8D0A9;
+}
+
+thead {
+	border-bottom: 1px solid rgba(0,0,0,0.03);
+	color: rgba(0,0,0,0.8);
+}
+
+NCsoft
