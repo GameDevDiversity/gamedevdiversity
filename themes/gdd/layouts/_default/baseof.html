@@ -21,12 +21,13 @@
     <div class="main column">
       <div class="header">
         <div class="title">
-          <h1>Video Game Developer Diversity</h1>
+          <h1>{{ .Site.Title }}</h1>
         </div>
         This is a test header
         This replaces the contents of our (basically empty) “main” block with something useful for the list template. In this case, we didn’t define a “title” block so the contents from our base template remain unchanged in lists.
 
         In our default single template (_default/single.html), let’s implement both blocks:
+        <a href="http://projectinclude.org/">Interesting link for Project Include</a>
       </div>
       <div class="section">
         <table class="table">
@@ -40,7 +41,7 @@
             </tr>
           </thead>
           <tbody>
-            {{ $url := "/data/data.csv" }}
+            {{ $url := "/content/data.csv" }}
             {{ $sep := "," }}
             {{ range $i, $r := getCSV $sep $url }}
             {{ if ne $i 0 }}
