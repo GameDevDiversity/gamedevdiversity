@@ -36,41 +36,57 @@
             <tr>
               <th class="th_first"><div class="th_first"><h2>Company</h2></div></th>
               <th>Data</th>
+              <th>Gender</th>
+              <th>Ethnicity</th>
+              <th>LGBTQ+</th>
+              <th>Disabled</th>
+              <th>Targets</th>
+              <th>Leadership / Engineering</th>
+              <th>Age</th>
+              <th>Retention</th>
+              <th>Equal Pay</th>
+              <th>Promotion Rates</th>
+              <th>Complaints</th>
               <th>EEO-1</th>
+              <th>Open Data</th>
               <th>Updated</th>
-              <th>Notes</th>
             </tr>
           </thead>
           <tbody>
             {{ $url := "/content/data.csv" }}
             {{ $sep := "," }}
             {{ range $i, $r := getCSV $sep $url }}
-            {{ if ne $i 0 }}
-            <tr>
-              {{ $icon := index $r 6 }}
-              {{ $subsidiary := index $r 1 }}
-              <td class="th_first">
-              {{ if ne $subsidiary "" }}
-                --- {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
-              {{ else }}
-                {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
+              {{ if ne $i 0 }}
+              <tr>
+                {{ $icon := index $r 3 }}
+                {{ $subsidiary := index $r 1 }}
+                <td class="th_first">
+                {{ if ne $subsidiary "" }}
+                  --- {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
+                {{ else }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
+                {{ end }}
+                </td>
+
+                <td>{{if ne (index $r 4) ""}}<a href="{{ index $r 4 }}">Link</a>{{end}}</td>
+
+                <td {{if eq (index $r 5) "Yes"}}class="yes"><img src="/faces/yes.png">{{else if eq (index $r 5) "Some"}}class="some"><img src="/faces/some.png">{{else}}class="no"><img src="/faces/no.png">{{end}}</td>
+                <td>{{ index $r 6 }}</td>
+                <td>{{ index $r 7 }}</td>
+                <td>{{ index $r 8 }}</td>
+                <td>{{ index $r 9 }}</td>
+                <td>{{ index $r 10 }}</td>
+                <td>{{ index $r 11 }}</td>
+                <td>{{ index $r 12 }}</td>
+                <td>{{ index $r 13 }}</td>
+                <td>{{ index $r 14 }}</td>
+                <td>{{ index $r 15 }}</td>
+                <td>{{ index $r 16 }}</td>
+                <td>{{ index $r 17 }}</td>
+                <td>{{ index $r 18 }}</td>
+              </tr>
               {{ end }}
-              </td>
-
-              <td><a href="{{ index $r 3 }}">Link</a></td>
-
-              <td>{{ index $r 4 }}</td>
-              <td>{{ index $r 5 }}</td>
-              <td>{{ index $r 7 }}</td>
-            </tr>
             {{ end }}
-            {{ end }}
-            <!-- <tr>
-              <td class="good">Nintendo</td>
-              <td class="good"><a href="https://www.nintendo.co.jp/csr/en/report2016/employees/index.html">Yes</a></td>
-              <td class="good">No</td>
-              <td class="good">2016</td>
-            </tr> -->
           </tbody>
         </table>
       </div>

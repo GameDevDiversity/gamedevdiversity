@@ -70,11 +70,15 @@ td img {
 	display: block;
 }
 
-td.good {
+td.yes {
 	background-color: #C1DAD6;
 }
 
-td.good:hover {
+td.no {
+	background-color: #DAC1C5;
+}
+
+td.some {
 	background-color: #E8D0A9;
 }
 
