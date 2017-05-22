@@ -1,11 +1,12 @@
 Company,Subsidiary ,Website,Data?,EEO-1?,Updated,Icon,Notes
-Activision Blizzard,,http://www.activisionblizzard.com,,,,,
-,Blizzard,https://www.blizzard.com,,,,,
-Amazon,,https://www.amazon.com,https://www.amazon.jobs/en/landing_pages/diversity,Yes,July 2016,,Parent company of a games subsidiary
-,Amazon Game Studios,https://games.amazon.com,,,,,
-Arkane Studios,,http://www.arkane-studios.com,,,,,
-Atlus,,https://www.atlus.com,,,,,
-Bandai Namco Studios,,https://www.bandainamcostudios.com/,,,,,
+Activision Blizzard,,http://www.activisionblizzard.com,,,,activision_blizzard.svg,
+,Blizzard Entertainment,https://www.blizzard.com,,,,blizzard.svg,
+,King Digital Entertainment,https://king.com/,,,,king.png,
+Amazon,,https://www.amazon.com,https://www.amazon.jobs/en/landing_pages/diversity,Yes,July 2016,amazon.svg,Parent company of a games subsidiary
+,Amazon Game Studios,https://games.amazon.com,,,,amazon_game_studios.png,
+Arkane Studios,,http://www.arkane-studios.com,,,,arkane.svg,
+Atlus,,https://www.atlus.com,,,,atlus.png,
+Bandai Namco Studios,,https://www.bandainamcostudios.com/,,,,bandai_namco.jpg,
 Big Huge Games,,http://www.bighugegames.com/,,,,,
 Bungie,,https://www.bungie.net/,,,,,
 Capcom,,http://www.capcom.com/,http://www.capcom.co.jp/ir/english/csr/csr07.html#employee,,,,
@@ -35,7 +36,6 @@ Human Head Studios,,http://humanhead.com/,,,,,
 Insomniac Games,,http://www.insomniacgames.com/,,,,,
 Introversion Software,,https://www.introversion.co.uk/introversion/,,,,,
 Kalypso Media,,http://www.kalypsomedia.com/en-us/,,,,,
-King Digital Entertainment,,https://king.com/,,,,,
 Koei Tecmo,,https://www.koeitecmo.co.jp/e/,,,,,
 Konami,,https://us.konami.com/,,,,,Much larger parent company
 LEGO Group,,https://www.lego.com/en-us/games,,,,,
@@ -77,10 +77,11 @@ Triumph Studios,,http://triumph.net/,,,,,
 Turtle Rock Studios,,https://www.turtlerockstudios.com/,,,,,
 Ubisoft,,https://www.ubisoft.com/en-US/,,,,,"http://blog.ubi.com/ubisoft-gdc-2017/
 https://www.mcvuk.com/news/read/ubisoft-diversity-is-a-fuel-to-grow-our-market/0167857"
+Unity,,https://unity3d.com/,,,,,https://blogs.unity3d.com/2016/06/02/do-you-want-to-make-your-studio-more-diverse/
 Valve Corporation,,http://www.valvesoftware.com/,,,,valve.png,
 Vlambeer,,http://www.vlambeer.com/,,,,,
 Wargaming,,http://na.wargaming.net/,,,,,
 Warner Brothers,,https://www.warnerbros.com/,,,,,
 ,WB Games,https://community.wbgames.com/,,,,,
 ZeniMax Media Inc,,https://www.zenimax.com/,,,,,
-Zynga,,https://www.zynga.com/,,,,,
+Zynga,,https://www.zynga.com/,,,,,https://medium.com/@zyngaorg/games-as-a-gateway-to-cs-867d55a90ee5

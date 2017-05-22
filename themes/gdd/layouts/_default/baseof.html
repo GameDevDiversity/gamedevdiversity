@@ -11,10 +11,10 @@
     <!-- Code that all your templates share, like a header -->
     <div class="main menu fixed">
       <div class="menu">
-        <a class="menuitem" href="https://www.gamedevdiversity.com">Home</a>
-        <a class="menuitem" href="https://twitter.com/VGDevDiversity">@VGDevDiversity</a>
+        <a href="https://www.gamedevdiversity.com">Home</a>
+        <a href="https://twitter.com/VGDevDiversity">@VGDevDiversity</a>
         <div class="menuright">
-          <a class="menuitem" href="https://github.com/austinkelmore/gamedevdiversity">Contribute</a>
+          <a href="https://github.com/austinkelmore/gamedevdiversity">Contribute</a>
         </div>
       </div>
     </div>
@@ -23,6 +23,7 @@
         <div class="title">
           <h1>{{ .Site.Title }}</h1>
         </div>
+        200
         This is a test header
         This replaces the contents of our (basically empty) “main” block with something useful for the list template. In this case, we didn’t define a “title” block so the contents from our base template remain unchanged in lists.
 
@@ -33,7 +34,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th><h2>Company</h2></th>
+              <th class="th_first"><div class="th_first"><h2>Company</h2></div></th>
               <th>Data</th>
               <th>EEO-1</th>
               <th>Updated</th>
@@ -48,27 +49,15 @@
             <tr>
               {{ $icon := index $r 6 }}
               {{ $subsidiary := index $r 1 }}
+              <td class="th_first">
               {{ if ne $subsidiary "" }}
-                {{ if ne $icon "" }}
-                <td>--- <a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}">{{ $subsidiary }}</a></td>
-                {{ else }}
-                <td>--- <a href="{{ index $r 2 }}">{{ $subsidiary }}</a></td>
-                {{ end }}
+                --- {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
               {{ else }}
-                {{ if ne $icon "" }}
-                <td><a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}">{{ index $r 0 }}</a></td>
-                {{ else }}
-                <td><a href="{{ index $r 2 }}">{{ index $r 0 }}</a></td>
-                {{ end }}
+                {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
               {{ end }}
+              </td>
 
-
-              {{ $link := index $r 3 }}
-              {{ if ne $link "" }}
-              <td><a href="{{ $link }}">Link</a></td>
-              {{ else }}
-              <td>{{ $link }}</td>
-              {{ end }}
+              <td><a href="{{ index $r 3 }}">Link</a></td>
 
               <td>{{ index $r 4 }}</td>
               <td>{{ index $r 5 }}</td>
