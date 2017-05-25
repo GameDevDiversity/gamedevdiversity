@@ -23,12 +23,8 @@
         <div class="title">
           <h1>{{ .Site.Title }}</h1>
         </div>
-        200
-        This is a test header
-        This replaces the contents of our (basically empty) “main” block with something useful for the list template. In this case, we didn’t define a “title” block so the contents from our base template remain unchanged in lists.
-
-        In our default single template (_default/single.html), let’s implement both blocks:
-        <a href="http://projectinclude.org/">Interesting link for Project Include</a>
+        <p>Help us gather accurate data on the state of equitable representation in the games industry.</p>
+        <br>
       </div>
       <div class="section">
         <table class="table">
@@ -49,7 +45,6 @@
               <th>Complaints</th>
               <th>EEO-1</th>
               <th>Open Data</th>
-              <th>Updated</th>
             </tr>
           </thead>
           <tbody>
@@ -59,8 +54,9 @@
               {{ if ne $i 0 }}
               <tr>
                 {{ $icon := index $r 3 }}
+                {{ $hasdata := ne (index $r 4) "" }}
                 {{ $subsidiary := index $r 1 }}
-                <td class="th_first">
+                <td class="th_first {{$hasdata}}">
                 {{ if ne $subsidiary "" }}
                   --- {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
                 {{ else }}
@@ -68,22 +64,24 @@
                 {{ end }}
                 </td>
 
-                <td>{{if ne (index $r 4) ""}}<a href="{{ index $r 4 }}">Link</a>{{end}}</td>
-
-                <td {{if eq (index $r 5) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 5) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 6) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 6) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 7) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 7) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 8) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 8) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 9) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 9) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 10) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 10) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 11) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 11) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 12) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 12) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 13) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 13) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 14) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 14) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 15) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 15) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 16) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 16) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td {{if eq (index $r 17) "Yes"}}class="yes smile"><img src="/faces/yes.png">{{else if eq (index $r 17) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="no smile"><img src="/faces/no.png">{{end}}</td>
-                <td>{{ index $r 18 }}</td>
+                {{if $hasdata}}
+                  <td class="true"><a href="{{ index $r 4 }}">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
+                  <td {{if eq (index $r 5) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 5) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 6) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 6) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 7) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 7) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 8) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 8) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 9) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 9) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 10) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 10) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 11) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 11) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 12) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 12) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 13) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 13) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 14) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 14) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 15) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 15) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 16) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 16) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                  <td {{if eq (index $r 17) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 17) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
+                {{else}}
+                  <td colspan="14" class="false nodata"><img src="/faces/no.png" class="internal"><div class="internal">No Data</div></td>
+                {{end}}
               </tr>
               {{ end }}
             {{ end }}

@@ -61,6 +61,11 @@ th {
 td {
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 5px 0px 0px 0px;
+	padding: 0px;
+}
+
+td.nodata {
+	text-align: center;
 }
 
 td.th_first img {
@@ -68,6 +73,18 @@ td.th_first img {
 	max-height: 100%;
 	height: auto;
 	display: block;
+}
+
+img.internal {
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.internal {
+	display: inline-block;
+	vertical-align: middle;
 }
 
 td.smile img {
@@ -78,12 +95,13 @@ td.smile img {
 	display: block;
 }
 
-td.yes {
-	background-color: #C1DAD6;
+
+td.true {
+	background-color: #C9E9E0;
 }
 
-td.no {
-	background-color: #DAC1C5;
+td.false {
+	background-color: #FCDFD3;
 }
 
 td.some {
