@@ -39,21 +39,21 @@
         <table class="table">
           <thead>
             <tr>
-              <th class="th_first"><div class="th_first"><h2>Company</h2></div></th>
-              <th>Data</th>
-              <th>Gender</th>
-              <th>Ethnicity</th>
-              <th>LGBTQ+</th>
-              <th>Disabled</th>
-              <th>Targets</th>
-              <th>Leadership / Engineering</th>
-              <th>Age</th>
-              <th>Retention</th>
-              <th>Equal Pay</th>
-              <th>Promotion Rates</th>
-              <th>Complaints</th>
-              <th>EEO-1</th>
-              <th>Open Data</th>
+              <th class="th_first"><h2>Company</h2></th>
+              <th class="th_rest">Data</th>
+              <th class="th_rest">Gender</th>
+              <th class="th_rest">Ethnicity</th>
+              <th class="th_rest">LGBTQ+</th>
+              <th class="th_rest">Disabled</th>
+              <th class="th_rest">Targets</th>
+              <th class="th_rest">Leadership / Engineering</th>
+              <th class="th_rest">Age</th>
+              <th class="th_rest">Retention</th>
+              <th class="th_rest">Equal Pay</th>
+              <th class="th_rest">Promotion Rates</th>
+              <th class="th_rest">Complaints</th>
+              <th class="th_rest">EEO-1</th>
+              <th class="th_rest">Open Data</th>
             </tr>
           </thead>
           <tbody>
@@ -67,14 +67,14 @@
                 {{ $subsidiary := index $r 1 }}
                 <td class="th_first {{$hasdata}}">
                 {{ if ne $subsidiary "" }}
-                  --- {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
                 {{ else }}
                   {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
                 {{ end }}
                 </td>
 
                 {{if $hasdata}}
-                  <td class="true"><a href="{{ index $r 4 }}">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
+                  <td class="link true"><a href="{{ index $r 4 }}">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
                   <td {{if eq (index $r 5) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 5) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
                   <td {{if eq (index $r 6) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 6) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
                   <td {{if eq (index $r 7) "Yes"}}class="true smile"><img src="/faces/yes.png">{{else if eq (index $r 7) "Some"}}class="some smile"><img src="/faces/some.png">{{else}}class="false smile"><img src="/faces/no.png">{{end}}</td>
