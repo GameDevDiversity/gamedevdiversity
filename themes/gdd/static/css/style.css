@@ -68,6 +68,14 @@ td.nodata {
 	text-align: center;
 }
 
+div.outer {
+	text-align: center;
+	width: 30%;
+	display: block;
+	align-content: center;
+	margin-left: 35%;
+}
+
 td.th_first img {
 	max-width: 100%;
 	max-height: 100%;
@@ -96,15 +104,15 @@ td.smile img {
 }
 
 
-td.true {
+.true {
 	background-color: #C9E9E0;
 }
 
-td.false {
+.false {
 	background-color: #FCDFD3;
 }
 
-td.some {
+.some {
 	background-color: #E8D0A9;
 }
 
