@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="246"
+   height="176"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     transform="translate(-222.4861,-339.14033)"
+     id="layer1">
+ <g
+       transform="translate(1.365935,0.594575)"
+       id="g3190">
+      <path
+         d="M 222.4861,340.20418 L 222.4861,382.12618 L 259.10413,382.12618 L 259.10413,513.95118 L 309.86429,513.95118 L 309.86429,382.12618 L 344.967,382.12618 L 344.967,340.20418 L 222.4861,340.20418 z"
+         id="path2416"
+         style="fill:#085aa4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         d="M 452.56666,347.44626 L 452.56666,340.37348 L 449.87615,340.37348 L 449.87615,339.14033 L 456.66357,339.14033 L 456.66357,340.37348 L 453.95268,340.37348 L 453.95268,347.44626 L 452.56666,347.44626 z M 457.59098,347.44626 L 457.59098,339.14033 L 459.62925,339.14033 L 461.72866,345.77488 L 463.75673,339.14033 L 465.75423,339.14033 L 465.75423,347.44626 L 464.49051,347.44626 L 464.49051,340.47539 L 462.35033,347.44626 L 461.0968,347.44626 L 458.8649,340.37348 L 458.8649,347.44626 L 457.59098,347.44626 z"
+         id="text2404"
+         style="font-size:20.8718338px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans" />
+      <path
+         d="M 318.95567,401.06633 L 360.90763,409.14755 C 360.90763,409.14755 362.29407,379.85312 382.59528,379.85312 C 393.38406,379.85312 399.65474,390.38868 399.51533,397.78333 C 399.01307,424.42356 354.2455,445.58906 318.95567,475.70032 C 318.95567,475.70032 318.95567,513.95118 318.95567,513.95118 L 447.75012,513.95118 L 449.77042,473.0397 C 449.77042,473.0397 384.36304,473.0397 384.36304,473.0397 C 430.18442,438.07946 448.65567,427.41715 448.65567,397.27826 C 448.65567,389.40235 447.97259,342.22494 386.13081,342.22494 C 324.33096,342.22494 318.95567,401.06633 318.95567,401.06633 z"
+         id="path3188"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
