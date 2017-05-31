@@ -4,7 +4,7 @@ body, html {
 }
 
 .menu {
-	width: 840px;
+	width: 700px;
 	background-color: #ACD1E9;
 	margin: 0 auto;
 }
@@ -22,7 +22,7 @@ body, html {
 }
 
 .column {
-	width: 1012px;
+	width: 840px;
 	margin: 0 auto;
 }
 
@@ -37,10 +37,10 @@ body, html {
 
 .table {
 	box-sizing: border-box;
-	width: 100%;
+	width: 700px;
 	color: rgba(0,0,0,0.8);
 	border-collapse: collapse;
-	margin: 1em 0em;
+	margin: 1em auto;
 	padding: 1em;
 	border-radius: 5px 5px 5px 5px;
 }
@@ -52,8 +52,8 @@ th {
 }
 
 .th_first {
-	width: 250px;
-	min-width: 200px;
+	width: 125px;
+	min-width: 125px;
 	height: 40px;
 	max-width: 100%;
 	max-height: 100%;
@@ -61,10 +61,10 @@ th {
 }
 
 .th_rest {
-	width: 55px;
-	min-width: 55px;
-	max-width: 55px;
-	font-size: 12px;
+	width: 30px;
+	min-width: 30px;
+	max-width: 30px;
+	font-size: 16px;
 	text-align: center;
 	vertical-align: center;
 }
@@ -108,6 +108,7 @@ img.internal {
 .internal {
 	display: inline-block;
 	vertical-align: middle;
+	font-weight: bold;
 }
 
 td.smile img {
@@ -123,8 +124,16 @@ td.smile img {
 	background-color: #C9E9E0;
 }
 
+.true:hover {
+	background-color: #DFF0D8;
+}
+
 .false {
 	background-color: #FCDFD3;
+}
+
+.false:hover {
+	background-color: #FAC7B0;
 }
 
 .some {
