@@ -1,6 +1,7 @@
 body, html {
 	margin: 0;
 	padding: 0;
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .menu {
@@ -61,9 +62,9 @@ th {
 }
 
 .th_rest {
-	width: 30px;
-	min-width: 30px;
-	max-width: 30px;
+	width: 35px;
+	min-width: 35px;
+	max-width: 35px;
 	font-size: 16px;
 	text-align: center;
 	vertical-align: center;
@@ -130,7 +131,7 @@ td.smile img {
 	background-color: #C9E9E0;
 }
 
-.true:hover {
+tr.true:hover {
 	background-color: #DFF0D8;
 }
 
@@ -138,15 +139,19 @@ td.smile img {
 	background-color: #FCDFD3;
 }
 
-.false:hover {
+tr.false:hover {
 	background-color: #FAC7B0;
 }
 
 .some {
-	background-color: #E8D0A9;
+	background-color: #C9E9E0;
 }
 
 thead {
 	border-bottom: 1px solid rgba(0,0,0,0.03);
 	color: rgba(0,0,0,0.8);
+}
+
+footer div {
+	text-align: center;
 }
