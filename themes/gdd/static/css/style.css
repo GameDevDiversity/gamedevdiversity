@@ -79,12 +79,18 @@ td.nodata {
 	text-align: center;
 }
 
+div.guide {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	margin-top: 1em;
+}
+
 div.outer {
 	text-align: center;
-	width: 30%;
-	display: block;
-	align-content: center;
-	margin-left: 35%;
+	width: 200px;
+	margin: 0em 0em;
+	display: inline-block;
 }
 
 td.link {
