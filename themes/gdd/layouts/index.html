@@ -41,9 +41,9 @@
               <tr class="{{$hasdata}}">
                 <td class="th_first">
                 {{ if ne $subsidiary "" }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{$subsidiary}}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
                 {{ else }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{index $r 0 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
                 {{ end }}
                 </td>
 
