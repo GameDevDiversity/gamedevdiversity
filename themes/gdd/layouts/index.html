@@ -12,15 +12,9 @@
             <div class="outer some">
             <img class="internal" src="/dataicons/some.png"><div class="internal"><h4>: Some data</h4></div>
             </div>
-        </div>
-        <div class="guide">
-            <div class="outer false">
+            <div class="outer true">
             <img class="internal" src="/dataicons/none.png"><div class="internal"><h4>: No category data</h4></div>
             </div>
-            <div class="outer false">
-            <img class="internal" src="/dataicons/no.png"><div class="internal"><h4>: No data at all</h4></div>
-            </div>
-        </div>
         <br>
       </div>
       <div class="section">
@@ -28,20 +22,12 @@
           <thead>
             <tr>
               <th class="th_first"><h2>Company</h2></th>
-              <th class="th_rest">Data</th>
               <th class="th_rest">Gender</th>
               <th class="th_rest">Ethnicity</th>
               <th class="th_rest">LGBTQ+</th>
               <th class="th_rest">Disability</th>
               <th class="th_rest">Age</th>
-              <!--<th class="th_rest">Leadership / Engineering</th>
-              <th class="th_rest">Targets</th>
-              <th class="th_rest">Retention</th>
-              <th class="th_rest">Equal Pay</th>
-              <th class="th_rest">Promotion Rates</th>
-              <th class="th_rest">Complaints</th>
-              <th class="th_rest">EEO-1</th>
-              <th class="th_rest">Open Data</th>-->
+              <th class="th_rest">Data</th>
             </tr>
           </thead>
           <tbody>
@@ -55,9 +41,9 @@
               <tr class="{{$hasdata}}">
                 <td class="th_first">
                 {{ if ne $subsidiary "" }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
                 {{ else }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
                 {{ end }}
                 </td>
 
@@ -68,22 +54,14 @@
                   {{ $disability := index $r 8 }}
                   {{ $age := index $r 11 }}
                   
-                  <td class="link"><a href="{{ index $r 4 }}">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
                   <td {{if eq $gender "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $gender "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $ethnicity "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $ethnicity "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $lgtbq "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $lgtbq "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $disability "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $disability "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $age "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $age "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <!--<td {{if eq (index $r 10) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 10) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 9) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 11) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 12) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 12) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 13) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 13) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 14) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 14) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 15) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 15) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 16) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 16) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td {{if eq (index $r 17) "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq (index $r 17) "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>-->
+                  <td class="link"><a href="{{ index $r 4 }}">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
                 {{else}}
-                  <td colspan="14" class="nodata"><img src="/dataicons/no.png" class="internal"><div class="internal">No Data</div></td>
+                  <td colspan="14" class="false nodata"><div class="internal">No Data</div></td>
                 {{end}}
               </tr>
               {{ end }}

@@ -62,9 +62,9 @@ th {
 }
 
 .th_rest {
-	width: 35px;
-	min-width: 35px;
-	max-width: 35px;
+	width: 42px;
+	min-width: 42px;
+	max-width: 42px;
 	font-size: 16px;
 	text-align: center;
 	vertical-align: center;
@@ -135,12 +135,8 @@ tr.true:hover {
 	background-color: #DFF0D8;
 }
 
-.false {
-	background-color: #FCDFD3;
-}
-
 tr.false:hover {
-	background-color: #FAC7B0;
+	background-color: #F5FAFA;
 }
 
 .some {
