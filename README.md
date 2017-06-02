@@ -1,5 +1,5 @@
 # Game Developer Diversity
-Our goal is to help game companies to release their diversity information so we can have a conversation about the state of equitable representation in the games industry.
+Our goal is to help game companies to release their diversity information so we can have a meaningful conversation about the state of equitable representation in the games industry. Without data, we don't know where we are or how far we have to go.
 
 ## Contributing
 Do you know a company that has released their diversity information or something on here is wrong? Please submit a pull request.
