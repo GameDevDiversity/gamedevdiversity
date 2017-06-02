@@ -23,12 +23,12 @@ body, html {
 }
 
 .column {
-	width: 840px;
+	width: 780px;
 	margin: 0 auto;
 }
 
 .header {
-	padding-top: 50px;
+	padding-top: 40px;
 	text-align: center;
 }
 

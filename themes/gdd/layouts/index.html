@@ -2,9 +2,11 @@
     <div class="main column">
       <div class="header">
         <div class="title">
-          <h1>{{ .Site.Title }}</h1>
+          <h2>{{ .Site.Title }}</h2>
         </div>
-        <p>Help us gather accurate data on the state of equitable representation in the games industry.</p>
+        <p>Our goal is to help game companies to release their diversity information so we can have a conversation about the state of equitable representation in the games industry. Without data, we don't know where we are or how far we have to go.</p>
+        <p>Know a company that has released their diversity information or something on here is wrong? Please submit a <a href="https://github.com/austinkelmore/gamedevdiversity">pull request</a>.
+        <p>Need help releasing your diversity information? Please e-mail <a href="mailto:gamedevdiversity@gmail.com">gamedevdiversity@gmail.com</a>, and we can help you out.</p>
         <div class="guide">
             <div class="outer true">
             <img class="internal" src="/dataicons/lots.png"><div class="internal"><h4>: Lots of data</h4></div>
@@ -59,7 +61,7 @@
                   <td {{if eq $lgtbq "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $lgtbq "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $disability "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $disability "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $age "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $age "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
-                  <td class="link"><a href="{{ index $r 4 }}">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
+                  <td class="link"><a href="{{ index $r 4 }}" target="_blank">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
                 {{else}}
                   <td colspan="14" class="false nodata"><div class="internal">No Data</div></td>
                 {{end}}
