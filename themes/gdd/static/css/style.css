@@ -32,6 +32,16 @@ body, html {
 	text-align: center;
 }
 
+.headertext {
+	text-align: center;
+	padding-left: 40px;
+	padding-right: 35px;
+}
+
+.headertext p {
+	text-align: left;
+}
+
 .title {
 	font-size: 30px;
 }
