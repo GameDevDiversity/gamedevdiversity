@@ -7,7 +7,7 @@
         <div class="headertext">
           <p>Our goal is to help game companies to release their diversity information so we can have a conversation about the state of equitable representation in the games industry. Without data, we don't know where we are or how far we have to go.</p>
           <p>Know a company that has released their diversity information or something on here is wrong? Please submit a <a href="https://github.com/austinkelmore/gamedevdiversity">pull request</a>.</p>
-          <p>Need help releasing your diversity information? Please e-mail <a href="mailto:gamedevdiversity@gmail.com">gamedevdiversity@gmail.com</a>, and we can help you out.</p>
+          <p>Need help releasing your diversity information? <a href="http://projectinclude.org/measuring_progress">Project Include</a> has some great information or you can e-mail <a href="mailto:gamedevdiversity@gmail.com">gamedevdiversity@gmail.com</a>, and we can help you out.</p>
         </div>
         <div class="guide">
             <div class="outer true">
@@ -25,13 +25,16 @@
         <table class="table">
           <thead>
             <tr>
-              <th><div class="th_first">Company</div></th>
+              <th rowspan="2"><div class="th_first">Company</div></th>
+              <th colspan="5">Data Categories</th>
+              <th rowspan="2">Link to Data</th>
+            </tr>
+            <tr>
               <th><div class="th_rest">Gender</div></th>
               <th><div class="th_rest">Ethnicity</div></th>
               <th><div class="th_rest">LGBTQ+</div></th>
               <th><div class="th_rest">Disability</div></th>
               <th><div class="th_rest">Age</div></th>
-              <th><div class="th_rest">Data</div></th>
             </tr>
           </thead>
           <tbody>
@@ -65,7 +68,7 @@
                   <td {{if eq $age "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $age "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td class="link"><a href="{{ index $r 4 }}" target="_blank">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
                 {{else}}
-                  <td colspan="14" class="false nodata"><div class="internal">No Data</div></td>
+                  <td colspan="6" class="false nodata"><div class="internal">No Data</div></td>
                 {{end}}
               </tr>
               {{ end }}

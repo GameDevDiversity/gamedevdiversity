@@ -53,13 +53,11 @@ body, html {
 	border-collapse: collapse;
 	margin: 1em auto;
 	padding: 1em;
-	border-radius: 5px 5px 5px 5px;
 }
 
 th {
 	border: 1px solid rgba(0,0,0,0.1);
-	border-radius: 5px 0px 0px 0px;
-	background-color: #F5FAFA;
+	background-color: #E0E0E0;
 }
 
 .th_first {
@@ -90,7 +88,6 @@ td a {
 
 td {
 	border: 1px solid rgba(0,0,0,0.1);
-	border-radius: 5px 0px 0px 0px;
 	padding: 0px;
 }
 
@@ -163,7 +160,7 @@ tr.false:hover {
 
 thead {
 	border-bottom: 1px solid rgba(0,0,0,0.03);
-	color: rgba(0,0,0,0.8);
+	background-color: #E0E0E0;
 }
 
 footer div {
