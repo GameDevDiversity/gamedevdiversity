@@ -5,6 +5,18 @@
           <h2>{{ .Site.Title }}</h2>
         </div>
         <div class="headertext">
+            {{ $images := .Resources.ByType "image" }}
+            {{ range $i := $images }}
+              {{ $image_type_arr := split $i.Name "." }}
+              {{ $image_ext := index $image_type_arr 1 }}
+              
+              {{ if ne $image_ext "svg" }}
+                {{ $resized := .Fit "138x48" }}
+                {{ $.Page.Scratch.Set $i.Name $resized.RelPermalink }}
+              {{ else }}
+                {{ $.Page.Scratch.Set $i.Name (printf "%s%s" "/" $i.Name) }}
+              {{ end }}
+            {{ end }}
           <p>Our goal is to help game companies to release their diversity information so we can have a conversation about the state of equitable representation in the video game industry. Without data, we don't know where we are or how far we have to go.</p>
           <p>Know a company that has released their diversity information or something on here is wrong? Please submit a <a href="https://github.com/GameDevDiversity/gamedevdiversity">pull request</a>.</p>
           <p>Need help releasing your diversity information? <a href="http://projectinclude.org/measuring_progress">Project Include</a> has some great information or you can e-mail <a href="mailto:gamedevdiversity@gmail.com">gamedevdiversity@gmail.com</a>, and we can help you out.</p>
@@ -48,9 +60,9 @@
               <tr class="{{$hasdata}}">
                 <td class="th_first">
                 {{ if ne $subsidiary "" }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{$subsidiary}}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{$subsidiary}}"><img src="{{ $.Page.Scratch.Get $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
                 {{ else }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{index $r 0 }}"><img src="/icons/{{ $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
+                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{index $r 0 }}"><img src="{{ $.Page.Scratch.Get $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
                 {{ end }}
                 </td>
 

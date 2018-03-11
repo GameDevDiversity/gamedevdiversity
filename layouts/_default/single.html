@@ -8,15 +8,13 @@
   </head>
   <link rel="stylesheet" href="/css/style.css">
   <body>
-    <!-- Code that all your templates share, like a header -->
-   
     {{ partial "header.html" . }}
 
-    {{ block "main" . }}
-      <!-- The part of the page that begins to differ between templates -->
-    {{ end }}
-
-    <!-- More shared code, perhaps a footer -->
+    <br>
+    <br>
+    <div class="main column">
+    {{ .Content }}
+    </div>
 
     {{ partial "footer.html" . }}
   </body>
