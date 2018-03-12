@@ -1,22 +1,21 @@
-{{ define "main" }}
+{{- define "main" -}}
     <div class="main column">
       <div class="header">
         <div class="title">
           <h2>{{ .Site.Title }}</h2>
         </div>
         <div class="headertext">
-            {{ $images := .Resources.ByType "image" }}
-            {{ range $i := $images }}
-              {{ $image_type_arr := split $i.Name "." }}
-              {{ $image_ext := index $image_type_arr 1 }}
-              
-              {{ if ne $image_ext "svg" }}
-                {{ $resized := .Fit "138x48" }}
-                {{ $.Page.Scratch.Set $i.Name $resized.RelPermalink }}
-              {{ else }}
-                {{ $.Page.Scratch.Set $i.Name (printf "%s%s" "/" $i.Name) }}
-              {{ end }}
-            {{ end }}
+            {{- $images := .Resources.ByType "image" -}}
+            {{- range $i := $images -}}
+              {{- $image_type_arr := split $i.Name "." -}}
+              {{- $image_ext := index $image_type_arr 1 -}}
+              {{- if ne $image_ext "svg" -}}
+                {{- $resized := .Fit "138x48" -}}
+                {{- $.Page.Scratch.Set $i.Name $resized.RelPermalink -}}
+              {{- else -}}
+                {{- $.Page.Scratch.Set $i.Name (printf "%s%s" "/" $i.Name) -}}
+              {{- end -}}
+            {{- end -}}
           <p>Our goal is to help game companies to release their diversity information so we can have a conversation about the state of equitable representation in the video game industry. Without data, we don't know where we are or how far we have to go.</p>
           <p>Know a company that has released their diversity information or something on here is wrong? Please submit a <a href="https://github.com/GameDevDiversity/gamedevdiversity">pull request</a>.</p>
           <p>Need help releasing your diversity information? <a href="http://projectinclude.org/measuring_progress">Project Include</a> has some great information or you can e-mail <a href="mailto:gamedevdiversity@gmail.com">gamedevdiversity@gmail.com</a>, and we can help you out.</p>
@@ -50,43 +49,41 @@
             </tr>
           </thead>
           <tbody>
-            {{ $url := "/content/data.csv" }}
-            {{ $sep := "," }}
-            {{ range $i, $r := getCSV $sep $url }}
-              {{ if ne $i 0 }}
-                {{ $icon := index $r 3 }}
-                {{ $hasdata := ne (index $r 4) "" }}
-                {{ $subsidiary := index $r 1 }}
+            {{- $url := "/content/data.csv" -}}
+            {{- $sep := "," -}}
+            {{- range $i, $r := getCSV $sep $url -}}
+              {{- if ne $i 0 -}}
+                {{- $icon := index $r 3 -}}
+                {{- $hasdata := ne (index $r 4) "" -}}
+                {{- $subsidiary := index $r 1 -}}
               <tr class="{{$hasdata}}">
                 <td class="th_first">
-                {{ if ne $subsidiary "" }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{$subsidiary}}"><img src="{{ $.Page.Scratch.Get $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
-                {{ else }}
-                  {{ if ne $icon "" }}<a href="{{ index $r 2 }}" target="_blank" title="{{index $r 0 }}"><img src="{{ $.Page.Scratch.Get $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
-                {{ end }}
+                {{ if ne $subsidiary "" -}}
+                  {{ if ne $icon "" -}}<a href="{{ index $r 2 }}" target="_blank" title="{{$subsidiary}}"><img src="{{ $.Page.Scratch.Get $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ $subsidiary }}</a>{{ end }}
+                {{ else -}}
+                  {{ if ne $icon "" -}}<a href="{{ index $r 2 }}" target="_blank" title="{{index $r 0 }}"><img src="{{ $.Page.Scratch.Get $icon }}"></a>{{ else }}<a href="{{ index $r 2 }}">{{ index $r 0 }}</a>{{ end }}
+                {{ end -}}
                 </td>
-
-                {{if $hasdata}}
-                  {{ $gender := index $r 5 }}
-                  {{ $ethnicity := index $r 6 }}
-                  {{ $lgtbq := index $r 7 }}
-                  {{ $disability := index $r 8 }}
-                  {{ $age := index $r 11 }}
-                  
+                {{- if $hasdata -}}
+                  {{- $gender := index $r 5 -}}
+                  {{- $ethnicity := index $r 6 -}}
+                  {{- $lgtbq := index $r 7 -}}
+                  {{- $disability := index $r 8 -}}
+                  {{- $age := index $r 11 -}}
                   <td {{if eq $gender "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $gender "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $ethnicity "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $ethnicity "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $lgtbq "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $lgtbq "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $disability "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $disability "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td {{if eq $age "Yes"}}class="smile"><img src="/dataicons/lots.png">{{else if eq $age "Some"}}class="smile"><img src="/dataicons/some.png">{{else}}class="smile"><img src="/dataicons/none.png">{{end}}</td>
                   <td class="link"><a href="{{ index $r 4 }}" target="_blank">{{if ne (index $r 18) ""}}{{index $r 18}}{{else}}Link{{end}}</a></td>
-                {{else}}
+                {{- else -}}
                   <td colspan="6" class="false nodata"><div class="internal">No Data</div></td>
-                {{end}}
+                {{- end -}}
               </tr>
-              {{ end }}
-            {{ end }}
+              {{- end -}}
+            {{- end -}}
           </tbody>
         </table>
       </div>
     </div>
-{{ end }}
+{{- end -}}
